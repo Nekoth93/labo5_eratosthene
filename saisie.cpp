@@ -17,6 +17,7 @@
 #include <iostream>
 #include <limits>
 #include "saisie.h"
+#include "affichage.h"
 
 #define VIDER_BUFFER cin.ignore(numeric_limits<streamsize>::max(), '\n')
 
@@ -25,6 +26,8 @@ using namespace std;
 
 int saisie(const int min, const int max) {
 
+   const string MSG_ERREUR = "Valeur incorrect"s;
+
    int valeurUtilisateur;
    bool erreur;
    do {
@@ -32,7 +35,7 @@ int saisie(const int min, const int max) {
       erreur = not(cin >> valeurUtilisateur) or valeurUtilisateur < min
                or valeurUtilisateur > max;
       if(erreur){
-         cout << "Valeur incorrect" << endl;
+         afficher(MSG_ERREUR);
       }
 
       cin.clear();

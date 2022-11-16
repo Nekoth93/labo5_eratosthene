@@ -23,17 +23,22 @@ using namespace std;
 //void initliser(vector<int>v1){
 //   v1(saisie(),0);
 //}
-void crible(const int val) {
+void crible(const int nombreUtilisateur) {
 
-   const int   NBR_MAX = 100,
-      NBR_MIN = 2;
+   //Initialisation du vecteur rempli de false
+   vector<bool> vecteurNbrPremier((size_t)nombreUtilisateur, false);
 
-   //conversiont implicite laissée tel quelle, car c'est ce qui est voulu.
-   vector<int> v1(val,0);
-//   vector<int> v1(100,0);
-
-   for(int & i : v1){
-      cout << i << ' ';
+   if(nombreUtilisateur > 1){
+      for(size_t i = 2; i < vecteurNbrPremier.size() ; i++) {
+         for(size_t j = 2; j < i; j++) {
+            if (i % j == 0) {
+               cout << i <<  " n'est un nombre premier" << endl;
+            }
+         }
+      }
    }
+
+
+
 
 }

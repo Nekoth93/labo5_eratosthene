@@ -17,4 +17,12 @@
 #ifndef LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_H
 #define LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_H
 
+#include <string>
+
+void afficher(const std::string& msg);
+
+void afficherIntervalle(const std::string& debutInter, const std::string&
+                         midInter, const std::string& finInter,
+                         int max,  int min);
+
 #endif //LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_H
