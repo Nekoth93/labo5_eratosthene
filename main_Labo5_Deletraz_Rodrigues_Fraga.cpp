@@ -38,6 +38,8 @@ int main(){
    const int   NBR_MAX = 100,
                NBR_MIN = 2;
 
+   const int VALEUR_PAR_LIGNE  = 10;
+
    const string MSG_DEBUT   = "Bonjour, ce programme permet d'afficher quels\n"s
                               "nombres sont premier ou non.\n"s
                               "Il vous sera demandera d'entrer une valeur qui "s
@@ -45,6 +47,9 @@ int main(){
                               "utilisee pour determiner jusqu'a quel nombre\n"s
                               "le programme doit aller."s;
    const string MSG_INTER   = "Les valeurs doivent etre comprise entre \n"s;
+   const string MSG_CRIBLE  = "Criblage du tableau"s;
+   const string MSG_PREMIER = "Liste des nombres 1er"s;
+
    const string SYMB_INT1   = "["s;
    const string SYMB_INT2   = "]"s;
    const string SYMB_MID    = " - "s;
@@ -68,9 +73,15 @@ int main(){
    //         Saisie utilisateur et appel des fonctions pour le crible
    // ====================================================================== //
 
+
    vector<bool> vecteurNbrPremier(initialiserVecteur(saisie(NBR_MIN, NBR_MAX)));
    crible(vecteurNbrPremier);
-   afficherVecteur(vecteurNbrPremier, SYMB_PREM, SYMB_N_PREM);
+   afficher(MSG_CRIBLE);
+   afficherVecteur(vecteurNbrPremier, SYMB_PREM, SYMB_N_PREM, VALEUR_PAR_LIGNE);
+   cout << endl;
+   afficher(MSG_PREMIER);
+   afficherVecteur(recupererValeurNombrePrem(vecteurNbrPremier), VALEUR_PAR_LIGNE);
+   cout << endl;
 
    VIDER_BUFFER;
    return EXIT_SUCCESS;

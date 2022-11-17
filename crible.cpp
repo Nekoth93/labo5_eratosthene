@@ -19,15 +19,15 @@
 #include "crible.h"
 
 
-void crible(std::vector<bool>& vecteurNbrPremier) {
+void crible(std::vector<bool>& vecteurNonCrible) {
 
-   if(vecteurNbrPremier.size() > 1){
-      vecteurNbrPremier[0] = vecteurNbrPremier[1] = false;
+   if(vecteurNonCrible.size() > 1){
+      vecteurNonCrible[0] = vecteurNonCrible[1] = false;
 
-      for(size_t i = 2; i * i < vecteurNbrPremier.size() ; i++) {
-         if(vecteurNbrPremier[i]){
-            for(size_t j = 2; j * i < vecteurNbrPremier.size(); j ++) {
-               vecteurNbrPremier[j * i] = false;
+      for(size_t i = 2; i * i < vecteurNonCrible.size() ; i++) {
+         if(vecteurNonCrible[i]){
+            for(size_t j = 2; j * i < vecteurNonCrible.size(); j++) {
+               vecteurNonCrible[j * i] = false;
             }
          }
       }
