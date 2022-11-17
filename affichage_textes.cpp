@@ -16,7 +16,7 @@
 
 #include <iostream>
 #include <string>
-#include "affichage.h"
+#include "affichage_textes.h"
 
 using namespace std;
 

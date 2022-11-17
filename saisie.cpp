@@ -17,7 +17,7 @@
 #include <iostream>
 #include <limits>
 #include "saisie.h"
-#include "affichage.h"
+#include "affichage_textes.h"
 
 #define VIDER_BUFFER cin.ignore(numeric_limits<streamsize>::max(), '\n')
 

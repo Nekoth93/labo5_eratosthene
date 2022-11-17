@@ -14,8 +14,8 @@
   ---------------------------------------------------------------------------
 */
 
-#ifndef LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_H
-#define LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_H
+#ifndef LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_TEXTES_H
+#define LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_TEXTES_H
 
 #include <string>
 
@@ -25,4 +25,4 @@ void afficherIntervalle(const std::string& debutInter, const std::string&
                          midInter, const std::string& finInter,
                          int max,  int min);
 
-#endif //LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_H
+#endif //LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_TEXTES_H

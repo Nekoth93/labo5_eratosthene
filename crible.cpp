@@ -17,28 +17,19 @@
 #include <vector>
 #include <iostream>
 #include "crible.h"
-#include "saisie.h"
 
-using namespace std;
-//void initliser(vector<int>v1){
-//   v1(saisie(),0);
-//}
-void crible(const int nombreUtilisateur) {
 
-   //Initialisation du vecteur rempli de false
-   vector<bool> vecteurNbrPremier((size_t)nombreUtilisateur, false);
+void crible(std::vector<bool>& vecteurNbrPremier) {
 
-   if(nombreUtilisateur > 1){
-      for(size_t i = 2; i < vecteurNbrPremier.size() ; i++) {
-         for(size_t j = 2; j < i; j++) {
-            if (i % j == 0) {
-               cout << i <<  " n'est un nombre premier" << endl;
+   if(vecteurNbrPremier.size() > 1){
+      vecteurNbrPremier[0] = vecteurNbrPremier[1] = false;
+
+      for(size_t i = 2; i * i < vecteurNbrPremier.size() ; i++) {
+         if(vecteurNbrPremier[i]){
+            for(size_t j = 2; j * i < vecteurNbrPremier.size(); j ++) {
+               vecteurNbrPremier[j * i] = false;
             }
          }
       }
    }
-
-
-
-
 }

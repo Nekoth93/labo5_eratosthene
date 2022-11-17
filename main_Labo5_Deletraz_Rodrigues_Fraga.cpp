@@ -24,31 +24,37 @@
 #include <limits>
 #include "saisie.h"
 #include "crible.h"
-#include "affichage.h"
+#include "affichage_textes.h"
+#include "gestion_vecteur.h"
 
 #define VIDER_BUFFER cin.ignore(numeric_limits<streamsize>::max(), '\n')
 
 using namespace std;
 
 int main(){
-   // ===================== Déclarations des variables ===================== //
+   // ====================================================================== //
+   //                            Déclaration des constantes
+   // ====================================================================== //
    const int   NBR_MAX = 100,
                NBR_MIN = 2;
 
-   const string MSG_DEBUT  = "Bonjour, ce programme permet d'afficher quels\n"s
-                             "nombres sont premier ou non.\n"s
-                             "Il vous sera demandera d'entrer une valeur qui sera\n"s
-                             "utilisee pour determiner jusqu'a quel nombre\n"s
-                             "le programme doit aller."s;
-   const string MSG_INTER  = "Les valeurs doivent etre comprise entre \n"s;
-   const string SYMB_INT1  = "["s;
-   const string SYMB_INT2  = "]"s;
-   const string SYMB_MID  = " - "s;
+   const string MSG_DEBUT   = "Bonjour, ce programme permet d'afficher quels\n"s
+                              "nombres sont premier ou non.\n"s
+                              "Il vous sera demandera d'entrer une valeur qui "s
+                              "sera\n"s
+                              "utilisee pour determiner jusqu'a quel nombre\n"s
+                              "le programme doit aller."s;
+   const string MSG_INTER   = "Les valeurs doivent etre comprise entre \n"s;
+   const string SYMB_INT1   = "["s;
+   const string SYMB_INT2   = "]"s;
+   const string SYMB_MID    = " - "s;
+   const string SYMB_PREM   = "X"s;
+   const string SYMB_N_PREM = "0"s;
 
 
 
    // ====================================================================== //
-   // Début du programme
+   //                            Début du programme
    // ====================================================================== //
 
    // Affichage premier message
@@ -57,12 +63,14 @@ int main(){
    afficher(MSG_INTER);
    afficherIntervalle(SYMB_INT1, SYMB_MID, SYMB_INT2, NBR_MIN, NBR_MAX);
 
-   // Gestion de saisi utilisateur
-   int valeur = saisie(NBR_MIN, NBR_MAX);
 
-   // initialisation du tableau (les vecteurs sont utilisés)
-   cout << "initialisation du tableau" << endl;
-   crible(nombreUtilisateur);
+   // ====================================================================== //
+   //         Saisie utilisateur et appel des fonctions pour le crible
+   // ====================================================================== //
+
+   vector<bool> vecteurNbrPremier(initialiserVecteur(saisie(NBR_MIN, NBR_MAX)));
+   crible(vecteurNbrPremier);
+   afficherVecteur(vecteurNbrPremier, SYMB_PREM, SYMB_N_PREM);
 
    VIDER_BUFFER;
    return EXIT_SUCCESS;

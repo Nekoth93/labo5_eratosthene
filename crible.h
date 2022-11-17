@@ -16,7 +16,7 @@
 
 #ifndef LABO5_CRIBLE_ERATOSTHENE_CRIBLE_H
 #define LABO5_CRIBLE_ERATOSTHENE_CRIBLE_H
-
+#include <vector>
 
 void crible(int val);
 
