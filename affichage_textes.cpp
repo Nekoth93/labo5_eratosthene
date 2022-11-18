@@ -20,16 +20,7 @@
 
 using namespace std;
 
-
 void afficher(const string& msg) {
    cout << msg << endl;
 
 }
-
-void afficherIntervalle(const string &debutInter, const string &midInter,
-                        const string &finInter,
-                        int min,  int max) {
-   cout << debutInter << min << midInter << max << finInter << endl;
-}
-
-

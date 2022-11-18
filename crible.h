@@ -7,7 +7,7 @@
   But         : Déclaration des fonctions de la librairie permettant d'effectuer
                 le crible d'Eratosthene.
 
-  Remarque(s) : à compléter
+  Remarque(s) : aucune
 
   Compilateur : gcc version 11.2.0
   IDE         : Clion 2022.2.4
@@ -18,6 +18,16 @@
 #define LABO5_CRIBLE_ERATOSTHENE_CRIBLE_H
 #include <vector>
 
-void crible(int val);
+// nom        crible
+// but        permet d'identifier les nombres premiers en utilisant un vecteur de
+//            booléen
+//
+// param      vecteurNonCrible : Un vecteur de booléen initialisé à true pour toutes
+//            les valeurs, passé par référence.
+//
+// return     aucune valeur de retour
+//
+// exception  n/a
+void crible(std::vector<bool>& vecteurNonCrible);
 
 #endif //LABO5_CRIBLE_ERATOSTHENE_CRIBLE_H

@@ -19,11 +19,13 @@
 
 #include <string>
 
+// nom         afficher
+// but         affiche un texte reçu en paramètre
+//
+// param       msg : string qui contient le message à afficher
+//
+// return      aucune valeur de retour
+// exception   n/a
 void afficher(const std::string& msg);
-
-void afficherIntervalle(const std::string& debutInter, const std::string&
-                         midInter, const std::string& finInter,
-                         int max,  int min);
-
 
 #endif //LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_TEXTES_H

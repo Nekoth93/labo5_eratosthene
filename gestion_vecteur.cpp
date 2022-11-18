@@ -15,10 +15,10 @@ vector<bool> initialiserVecteur(int valeurUtilisateur) {
    return vecteurNbrPremier;
 }
 
-vector<int> recupererValeurNombrePrem(const vector<bool> &v1) {
+vector<int> recupererValNbrPrem(const vector<bool>& vecteurCrible) {
    vector<int> listeDesPremier;
-   for (size_t i = 0; i < v1.size(); ++i) {
-      if (v1[i]) {
+   for (size_t i = 0; i < vecteurCrible.size()+1; ++i) {
+      if (vecteurCrible[i]) {
          listeDesPremier.push_back((int)i);
       }
    }
@@ -26,14 +26,14 @@ vector<int> recupererValeurNombrePrem(const vector<bool> &v1) {
 }
 
 
-void afficherVecteur(const vector<bool>& v1, const string& premier,
+void afficherVecteur(const vector<bool>& vecteurCrible, const string& premier,
                      const string& pasPremier, int valeurParLignes) {
 
    const int LARGEUR_AFFICHAGE = 3;
 
    int sautDeLigne = 0;
 
-   for(bool estPremier : v1) {
+   for(bool estPremier : vecteurCrible) {
       if(estPremier){
          cout << setw(LARGEUR_AFFICHAGE) << premier;
       }
@@ -44,12 +44,12 @@ void afficherVecteur(const vector<bool>& v1, const string& premier,
 
 }
 
-void afficherVecteur(const vector<int> &v1, int valeurParLignes) {
+void afficherVecteur(const vector<int> &vecteurNbrPremier, int valeurParLignes) {
 
    const int LARGEUR_AFFICHAGE = 3;
    int       sautDeLigne       = 0;
 
-   for(int val : v1) {
+   for(int val : vecteurNbrPremier) {
       cout << setw(LARGEUR_AFFICHAGE) << val;
 
       // Saut de ligne après 10 entrées :
