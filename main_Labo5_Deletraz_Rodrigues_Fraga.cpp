@@ -21,13 +21,10 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <limits>
 #include "saisie.h"
 #include "crible.h"
 #include "affichage_textes.h"
 #include "gestion_vecteur.h"
-
-#define VIDER_BUFFER cin.ignore(numeric_limits<streamsize>::max(), '\n')
 
 using namespace std;
 
@@ -59,7 +56,7 @@ int main(){
                               "utilisee pour determiner jusqu'a quel nombre\n"s
                               "le programme doit aller."s;
    const string MSG_INTER   = "Les valeurs doivent etre comprise entre :\n"s +
-                              SYMB_INT1 + to_string(NBR_MIN) + SYMB_MID      +
+                              SYMB_INT1 + to_string(NBR_MIN) + SYMB_MID  +
                               to_string(NBR_MAX) + SYMB_INT2;
    const string MSG_CRIBLE  = "Criblage du tableau"s;
    const string MSG_PREMIER = "Liste des nombres 1er"s;
@@ -82,14 +79,17 @@ int main(){
    vector<bool> vecteurNbrPremier(initialiserVecteur(saisie(NBR_MIN, NBR_MAX)));
    crible(vecteurNbrPremier);
    cout << endl;
+
    afficher(MSG_CRIBLE);
    afficherVecteur(vecteurNbrPremier, SYMB_PREM, SYMB_N_PREM, VALEUR_PAR_LIGNE);
    cout << endl << endl;
+
    afficher(MSG_PREMIER);
    afficherVecteur(recupererValNbrPrem(vecteurNbrPremier), VALEUR_PAR_LIGNE);
    cout << endl << endl;
-   afficher(MSG_FIN);
 
-   VIDER_BUFFER;
+   afficher(MSG_FIN);
+   viderBuffer();
+
    return EXIT_SUCCESS;
 }

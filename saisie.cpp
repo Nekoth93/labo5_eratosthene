@@ -15,31 +15,28 @@
 */
 
 #include <iostream>
-#include <limits>
 #include "saisie.h"
 #include "affichage_textes.h"
 
-#define VIDER_BUFFER cin.ignore(numeric_limits<streamsize>::max(), '\n')
-
 using namespace std;
-
 
 int saisie(const int min, const int max) {
 
-   const string MSG_ERREUR = "Valeur incorrect"s;
+   const string MSG_ERREUR = "Valeur incorrect, veuillez refaire votre saisie"s;
 
-   int valeurUtilisateur;
+   int  valeurUtilisateur;
    bool erreur;
    do {
 
       erreur = not(cin >> valeurUtilisateur) or valeurUtilisateur < min
                or valeurUtilisateur > max;
-      if(erreur){
+
+      if(erreur) {
          afficher(MSG_ERREUR);
       }
 
       cin.clear();
-      VIDER_BUFFER;
+      viderBuffer();
    } while (erreur);
    return valeurUtilisateur;
 }

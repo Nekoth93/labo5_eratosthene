@@ -16,11 +16,17 @@
 
 #include <iostream>
 #include <string>
+#include <limits>
 #include "affichage_textes.h"
 
 using namespace std;
 
 void afficher(const string& msg) {
    cout << msg << endl;
+
+}
+
+void viderBuffer() {
+   cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 }

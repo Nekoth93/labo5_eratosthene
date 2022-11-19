@@ -28,4 +28,6 @@
 // exception   n/a
 void afficher(const std::string& msg);
 
+void viderBuffer();
+
 #endif //LABO5_CRIBLE_ERATOSTHENE_AFFICHAGE_TEXTES_H

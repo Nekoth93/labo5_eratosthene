@@ -17,7 +17,6 @@
 #ifndef LABO5_CRIBLE_ERATOSTHENE_SAISIE_H
 #define LABO5_CRIBLE_ERATOSTHENE_SAISIE_H
 
-
 // nom         saisie
 // but         contrôle la saisie de l'utilisateur. En cas d'entrée erronée, lui
 //             redemande de faire la saisie

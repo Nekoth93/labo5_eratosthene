@@ -30,11 +30,10 @@ void afficherVecteur(const vector<bool>& vecteurCrible, const string& premier,
                      const string& pasPremier, int valeurParLignes) {
 
    const int LARGEUR_AFFICHAGE = 3;
+   int       sautDeLigne       = 0;
 
-   int sautDeLigne = 0;
-
-   for(bool estPremier : vecteurCrible) {
-      if(estPremier){
+   for (size_t i = 0; i <= vecteurCrible.size(); ++i) {
+      if(vecteurCrible[i]) {
          cout << setw(LARGEUR_AFFICHAGE) << premier;
       }
       else {
@@ -46,13 +45,13 @@ void afficherVecteur(const vector<bool>& vecteurCrible, const string& premier,
 
 void afficherVecteur(const vector<int> &vecteurNbrPremier, int valeurParLignes) {
 
-   const int LARGEUR_AFFICHAGE = 3;
+   const int LARGEUR_AFFICHAGE = 4;
    int       sautDeLigne       = 0;
 
    for(int val : vecteurNbrPremier) {
       cout << setw(LARGEUR_AFFICHAGE) << val;
 
-      // Saut de ligne après 10 entrées :
+      // Saut de ligne après un nombre défini d'entrées :
       sautDeLigne++;
       if (sautDeLigne % valeurParLignes == 0) {
          cout << endl;

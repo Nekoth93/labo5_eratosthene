@@ -23,7 +23,6 @@
 #include <iostream>
 #include "crible.h"
 
-
 void crible(std::vector<bool>& vecteurNonCrible) {
    // Vérifie que la taille est supérieure à 1, dans le cas contraire, aucun nombre
    // ne sera premier, il est alors inutile de faire la suite.
@@ -34,12 +33,12 @@ void crible(std::vector<bool>& vecteurNonCrible) {
       // Cette boucle s'arrête quand le carré de i atteint la taille du vecteur.
       // En effet, une fois que l'on atteint cette valeur, nous avons éliminé
       // toutes les valeurs qui ne sont pas des nombres premiers.
-      for(size_t i = 2; i * i < vecteurNonCrible.size(); i++) {
-         if(vecteurNonCrible[i]){
+      for(size_t i = 2; i * i <= vecteurNonCrible.size(); i++) {
+         if(vecteurNonCrible[i]) {
             // Cette boucle va jusqu'à j * i < limite. Ce qui permet d'éliminer
             // tous les multiples de i et j qui sont par définition pas premier,
             // étant donné qu'ils sont diviseurs l'un de l'autre.
-            for(size_t j = 2; j * i < vecteurNonCrible.size(); j++) {
+            for(size_t j = 2; j * i <= vecteurNonCrible.size(); j++) {
                vecteurNonCrible[j * i] = false;
             }
          }
